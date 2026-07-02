@@ -1,0 +1,23 @@
+{
+  "tests": [
+    {
+      "name": "CORS preflight",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "Chat about Rust",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "messages": [
+          { "role": "user", "content": "Как скрафтить деревянную стену в Rust?" }
+        ]
+      },
+      "expectedStatus": 200,
+      "expectedBody": { "reply": "string" },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

@@ -60,7 +60,12 @@
 
   body {
     @apply bg-black text-white;
-    background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgb(var(--background-end-rgb))
+      )
+      rgb(var(--background-start-rgb));
   }
 }
 
@@ -81,23 +86,84 @@
 
 /* Text glow effect */
 .text-glow {
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 255, 255, 0.1);
+  text-shadow:
+    0 0 10px rgba(255, 255, 255, 0.3),
+    0 0 20px rgba(255, 255, 255, 0.2),
+    0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+/* Rust orange neon glow */
+.rust-glow {
+  text-shadow:
+    0 0 10px rgba(255, 122, 0, 0.6),
+    0 0 20px rgba(255, 122, 0, 0.4),
+    0 0 40px rgba(255, 122, 0, 0.2);
+}
+
+.rust-box-glow {
+  box-shadow:
+    0 0 20px rgba(255, 122, 0, 0.25),
+    inset 0 0 20px rgba(255, 122, 0, 0.05);
+}
+
+.rust-avatar-glow {
+  box-shadow:
+    0 0 30px rgba(255, 122, 0, 0.5),
+    0 0 60px rgba(255, 122, 0, 0.25);
+}
+
+/* Typing dots */
+@keyframes typingBounce {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  30% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+
+.typing-dot {
+  animation: typingBounce 1.2s infinite;
+}
+
+/* Custom scrollbar for chat */
+.chat-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.chat-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 122, 0, 0.4);
+  border-radius: 3px;
+}
+.chat-scroll::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 /* Data flow animations */
 @keyframes dataFlow {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 .animate-data-flow {
   animation: dataFlow 3s linear infinite;
-  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5), 0 0 20px rgba(59, 130, 246, 0.3);
+  box-shadow:
+    0 0 10px rgba(59, 130, 246, 0.5),
+    0 0 20px rgba(59, 130, 246, 0.3);
 }
 
 .animate-data-flow-reverse {
   animation: dataFlow 3s linear infinite reverse;
-  box-shadow: 0 0 10px rgba(16, 185, 129, 0.5), 0 0 20px rgba(16, 185, 129, 0.3);
+  box-shadow:
+    0 0 10px rgba(16, 185, 129, 0.5),
+    0 0 20px rgba(16, 185, 129, 0.3);
 }
 
 /* Gradient animation */
