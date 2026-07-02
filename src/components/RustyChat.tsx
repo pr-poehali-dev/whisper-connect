@@ -74,15 +74,15 @@ export default function RustyChat() {
   }
 
   return (
-    <div className="w-full max-w-3xl mx-auto flex flex-col h-[70vh] rounded-2xl border border-orange-500/30 bg-black/60 backdrop-blur-sm rust-box-glow overflow-hidden">
-      <div className="flex items-center gap-3 px-5 py-4 border-b border-orange-500/20 bg-black/40">
+    <div className="w-full max-w-3xl mx-auto flex flex-col h-[70vh] rounded-2xl border border-red-600/30 bg-black/60 backdrop-blur-sm rust-box-glow overflow-hidden">
+      <div className="flex items-center gap-3 px-5 py-4 border-b border-red-600/20 bg-black/40">
         <img src={AVATAR} alt="Rusty AI" className="w-11 h-11 rounded-full object-cover rust-avatar-glow" />
         <div>
           <div className="font-semibold text-white flex items-center gap-2">
             Rusty AI
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
           </div>
-          <div className="text-xs text-orange-400/80 font-mono">эксперт по игре Rust</div>
+          <div className="text-xs text-red-400/80 font-mono">эксперт по игре Rust</div>
         </div>
       </div>
 
@@ -95,8 +95,8 @@ export default function RustyChat() {
             <div
               className={`max-w-[80%] px-4 py-2.5 rounded-2xl text-sm leading-relaxed whitespace-pre-wrap ${
                 m.role === "user"
-                  ? "bg-orange-500/90 text-black rounded-br-sm"
-                  : "bg-white/5 text-gray-100 border border-orange-500/15 rounded-bl-sm"
+                  ? "bg-red-600 text-white rounded-br-sm"
+                  : "bg-white/5 text-gray-100 border border-red-600/15 rounded-bl-sm"
               }`}
             >
               {m.content}
@@ -106,10 +106,10 @@ export default function RustyChat() {
         {loading && (
           <div className="flex gap-3">
             <img src={AVATAR} alt="" className="w-8 h-8 rounded-full object-cover shrink-0 mt-1" />
-            <div className="bg-white/5 border border-orange-500/15 rounded-2xl rounded-bl-sm px-4 py-3 flex gap-1.5">
-              <span className="typing-dot w-2 h-2 rounded-full bg-orange-400" />
-              <span className="typing-dot w-2 h-2 rounded-full bg-orange-400" style={{ animationDelay: "0.2s" }} />
-              <span className="typing-dot w-2 h-2 rounded-full bg-orange-400" style={{ animationDelay: "0.4s" }} />
+            <div className="bg-white/5 border border-red-600/15 rounded-2xl rounded-bl-sm px-4 py-3 flex gap-1.5">
+              <span className="typing-dot w-2 h-2 rounded-full bg-red-500" />
+              <span className="typing-dot w-2 h-2 rounded-full bg-red-500" style={{ animationDelay: "0.2s" }} />
+              <span className="typing-dot w-2 h-2 rounded-full bg-red-500" style={{ animationDelay: "0.4s" }} />
             </div>
           </div>
         )}
@@ -121,7 +121,7 @@ export default function RustyChat() {
             <button
               key={s}
               onClick={() => send(s)}
-              className="text-xs px-3 py-1.5 rounded-full border border-orange-500/30 text-orange-300 hover:bg-orange-500/10 transition"
+              className="text-xs px-3 py-1.5 rounded-full border border-red-600/30 text-red-300 hover:bg-red-600/10 transition"
             >
               {s}
             </button>
@@ -129,7 +129,7 @@ export default function RustyChat() {
         </div>
       )}
 
-      <div className="p-4 border-t border-orange-500/20 bg-black/40">
+      <div className="p-4 border-t border-red-600/20 bg-black/40">
         <form
           onSubmit={(e) => {
             e.preventDefault()
@@ -141,12 +141,12 @@ export default function RustyChat() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Спроси Rusty AI о Rust..."
-            className="flex-1 bg-white/5 border border-orange-500/25 rounded-xl px-4 py-3 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-orange-500/60 transition"
+            className="flex-1 bg-white/5 border border-red-600/25 rounded-xl px-4 py-3 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-red-600/60 transition"
           />
           <button
             type="submit"
             disabled={loading || !input.trim()}
-            className="shrink-0 w-12 h-12 rounded-xl bg-orange-500 hover:bg-orange-400 disabled:opacity-40 disabled:cursor-not-allowed transition flex items-center justify-center text-black"
+            className="shrink-0 w-12 h-12 rounded-xl bg-red-600 hover:bg-red-500 disabled:opacity-40 disabled:cursor-not-allowed transition flex items-center justify-center text-white"
           >
             <Icon name="Send" size={20} />
           </button>
